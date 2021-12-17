@@ -3,19 +3,65 @@
 @{
     ViewData["Title"] = "Home page";
     <style>
-        .Stripe {
-
-        }
     </style>
 }
-<div class="container bg-white box-shadow text-center rounded">
-    <img src="/grads/immm.png" alt="There should be a nice gradient" /><br />
-    <p><h5>Start Exploring English Now.</h5></p>
-    <p style="padding-bottom: 10px;">Here's what we have for you:</p>
+<div class="container bg-white box-shadow text-center rounded"
+     style="padding-left: 0em; padding-right: 0em; padding-bottom:0.4em; margin-bottom:1em; margin-top:4.5em;">
+    <img class="img-fluid rounded-lg" src="~/grads/i.png" style="height:150px; width:100%;" />
+    <p style="padding-top: 0.5em;"><h3>Start Exploring English Now.</h3></p>
+    <p><h4><small>Here's what we have for you:</small></h4></p>
 </div>
-<div class="container bg-white box-shadow rounded">
-    
+
+<div class="container">
+    <div class="row" style="margin-bottom: 1em; padding-left: 15em; padding-right: 15em;">
+        <div class="col container bg-white box-shadow rounded-lg"
+             style="margin-right: 0.5em; padding-left:0.5em; padding-right:0em; padding-top:0.5em; padding-bottom:0.5em;">
+            <a asp-area="" asp-page="/Grammar" class="btn p-0 w-100 h-100 text-left" role="button">
+                <img class="float-left rounded" src="~/grads/y-g.png" style="width:10px; min-height: 70px; max-height: 150px;" />
+                <p><h4 style="padding-left: 1em;"><small>English Grammar</small></h4></p>
+            </a>
+        </div>
+
+        <div class="col container bg-white box-shadow rounded-lg"
+             style="margin-left: 0.5em; padding-left: 0.5em; padding-right: 0em; padding-top: 0.5em; padding-bottom: 0.5em;">
+            <a asp-area="" asp-page="/Reading" class="btn p-0 w-100 h-100 text-left" role="button">
+                <img class="float-left rounded" src="~/grads/r-o.png" style="width:10px; height: 70px;" />
+                <p><h4 style="padding-left: 1em;"><small>Check your Reading skill</small></h4></p>
+            </a>
+        </div>
+    </div>
 </div>
-<div class="container bg-white box-shadow p-2 rounded">
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div class="container">
+    <div class="row p-0" style="margin-bottom: 1em;">
+        <div class="col container bg-white box-shadow rounded-lg"
+             style="margin-right: 0.5em; padding-left: 0.5em; padding-right: 0em; padding-top: 0.5em; padding-bottom: 0.5em;">
+
+            <img class="float-left rounded" src="~/grads/sthelse.png" style="width:10px; height: 60px;" />
+            <h5 style="padding-left: 1.25em;">
+                <small>
+                    If you want to learn even more Grammar:
+                </small>
+            </h5>
+
+            <div class="text-left display-6" style="padding-left: 1.5em;">
+                <a href="https://www.perfect-english-grammar.com/" style="color: #404040" target="_blank">Perfect English Grammar</a>
+            </div>
+        </div>
+
+        <div class="col container bg-white box-shadow rounded-lg"
+             style="margin-left: 0.5em; padding-left:0.5em; padding-right:0em; padding-top:0.5em; padding-bottom:0.5em;">
+
+            <img class="float-left rounded" src="~/grads/b-p.png" style="width:10px; height: 60px;" />
+            <h5 style="padding-left: 1.25em;">
+                <small>
+                    If you want to learn English vocabulary:
+                </small>
+            </h5>
+
+            <div class="text-left display-6" style="padding-left: 1.5em;">
+                <a href="https://dictionary.cambridge.org" style="color: #404040" target="_blank">Cambridge Dictionary</a>
+            </div>
+        </div>
+    </div>
 </div>

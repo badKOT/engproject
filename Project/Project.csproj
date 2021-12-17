@@ -4,4 +4,38 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="Pages\Error.cshtml.cs" />
+    <Content Include="Pages\Grammar.cshtml.cs" />
+    <Content Include="Pages\Index.cshtml.cs" />
+    <Content Include="Pages\Items\Create.cshtml.cs" />
+    <Content Include="Pages\Items\Delete.cshtml.cs" />
+    <Content Include="Pages\Items\Details.cshtml.cs" />
+    <Content Include="Pages\Items\Edit.cshtml.cs" />
+    <Content Include="Pages\Items\Index.cshtml.cs" />
+    <Content Include="Pages\Reading.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\grads\b-p stripe.png" />
+    <None Include="wwwroot\grads\b-p.png" />
+    <None Include="wwwroot\grads\g-sq.png" />
+    <None Include="wwwroot\grads\i.png" />
+    <None Include="wwwroot\grads\mainimage.png" />
+    <None Include="wwwroot\grads\r-o stripe.png" />
+    <None Include="wwwroot\grads\r-o.png" />
+    <None Include="wwwroot\grads\y-g stripe.png" />
+    <None Include="wwwroot\grads\y-g.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
 </Project>
