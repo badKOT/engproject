@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{searchString?}"
 @model Project.Pages.Items.IndexModel
 
 @{
@@ -13,7 +13,7 @@
 
 <form>
     <p>
-        <select asp-for="ItemTag" asp-items="Model.Tags">
+        <select class="custom-select" asp-for="ItemTag" asp-items="Model.Tags">
             <option value="">All</option>
         </select>
         Title: <input type="text" asp-for="SearchString" />
@@ -36,23 +36,24 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Item) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tag)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Link)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Item)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tag)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Link)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -1,71 +1,79 @@
-﻿@page
+﻿@page "{searchString?}"
 @model Project.Pages.Items.IndexModel
 @{
     ViewData["Title"] = "Grammar page";
-    <style>
-        .Stripe {
-        }
-    </style>
 }
-
 <div class="container bg-white box-shadow text-center rounded"
      style="padding-left: 0em; padding-right: 0em; padding-bottom:0.4em; margin-bottom:1em; margin-top:4.5em;">
     <img class="img-fluid rounded-lg" src="~/grads/yyy.png" style="height:150px; width:100%;" />
     <p style="padding-top: 0.5em;">
         <h3>
-            Here's everything you need<br />
-            to immerse yourself in English grammar.
+            All you need to immerse yourself<br />
+            in English grammar.
         </h3>
     </p>
     <p>
         <h4>
             <small>
-                There are tons of grammar rules, so we decided to divide them by sections.<br />
-                You can switch between sections by clicking the buttons below.
+                There are tons of grammar rules, so we divided them by sections.<br />
+                You can switch between sections by clicking the selector below.
             </small>
         </h4>
     </p>
 </div>
 
-<div class="container bg-white box-shadow p-0 rounded" style="height: 500px;">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Item[0].Title)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Item[0].Tag)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Item[0].Link)
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-           @foreach (var item in Model.Item)
-            {
-                if (item.Tag == "ReadingA" || item.Tag == "ReadingB" || item.Tag == "ReadingC")
-                    continue;
+<div class="container" style="height: 500px; padding-left: 15em; padding-right: 15em;">
+    <div class="container bg-white box-shadow rounded-lg p-0">
+        <table class="table table-hover table-borderless " style="width: 100%; height: 100%;">
+            <thead>
                 <tr>
-                    <td>
-                        <a href="@Html.DisplayFor(modelItem => item.Link)">
-                            @Html.DisplayFor(modelItem => item.Title)
-                        </a>
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Tag)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Link)
-                    </td>
-                    <td>
-                        <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                        <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                        <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-                    </td>
+                    <th style="width: 40%; padding-bottom: 1.5em;">
+                        @Html.DisplayNameFor(model => model.Item[0].Title)
+                    </th>
+                    <th style="width: 25%; padding-bottom: 1.5em;">
+                        @Html.DisplayNameFor(model => model.Item[0].Tag)
+                    </th>
+                    <th class="p-0">
+                        <form class="form-inline">
+                            <p>
+                                <select class="custom-select" asp-for="ItemTag" style="margin-top: 1em; margin-right: 0.5em; margin-left: 1.45em;">
+                                    <option value="">All</option>
+                                    <option value="Adjectives">Adjectives</option>
+                                    <option value="Adverbs">Adverbs</option>
+                                    <option value="Nouns">Nouns</option>
+                                    <option value="Prepositions">Prepositions</option>
+                                    <option value="Verbs">Verbs</option>
+                                </select>
+                                <div style="display: none;">Title: <input type="text" asp-for="SearchString" /></div>
+                                <input type="submit" value="Filter" />
+                            </p>
+                        </form>
+                    </th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Item)
+                {
+                    if (item.Tag == "ReadingA" || item.Tag == "ReadingB" || item.Tag == "ReadingC")
+                        continue;
+
+                    <tr>
+                        <td>
+                            <a href="@Html.DisplayFor(modelItem => item.Link)">
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tag)
+                        </td>
+                        <td class="text-right">
+                            <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                            <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>

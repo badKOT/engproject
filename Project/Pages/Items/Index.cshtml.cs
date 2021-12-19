@@ -26,11 +26,10 @@ namespace Project.Pages.Items
         public SelectList Tags { get; set; }
         [BindProperty(SupportsGet = true)]
         public string ItemTag { get; set; }
-
         public async Task OnGetAsync()
         {
-            // Use LINQ to get list of tags.
-            IQueryable<string> tagQuery = from m in _context.Item
+            // Use LINQ to get list of genres.
+            IQueryable<string> genreQuery = from m in _context.Item
                                             orderby m.Tag
                                             select m.Tag;
 
@@ -46,8 +45,9 @@ namespace Project.Pages.Items
             {
                 items = items.Where(x => x.Tag == ItemTag);
             }
-            Tags = new SelectList(await tagQuery.Distinct().ToListAsync());
+            Tags = new SelectList(await genreQuery.Distinct().ToListAsync());
             Item = await items.ToListAsync();
         }
+
     }
 }
