@@ -41,7 +41,6 @@
                                     <option value="Adjectives">Adjectives</option>
                                     <option value="Adverbs">Adverbs</option>
                                     <option value="Nouns">Nouns</option>
-                                    <option value="Prepositions">Prepositions</option>
                                     <option value="Verbs">Verbs</option>
                                 </select>
                                 <div style="display: none;">Title: <input type="text" asp-for="SearchString" /></div>
@@ -59,7 +58,7 @@
 
                     <tr>
                         <td>
-                            <a href="@Html.DisplayFor(modelItem => item.Link)">
+                            <a href="@Html.DisplayFor(modelItem => item.Link)" target="_blank">
                                 @Html.DisplayFor(modelItem => item.Title)
                             </a>
                         </td>
@@ -67,9 +66,9 @@
                             @Html.DisplayFor(modelItem => item.Tag)
                         </td>
                         <td class="text-right">
-                            <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                            <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                            <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                            <a asp-page="./Items/Edit" asp-route-id="@item.ID">Edit</a> |
+                            <a asp-page="./Items/Details" asp-route-id="@item.ID">Details</a> |
+                            <a asp-page="./Items/Delete" asp-route-id="@item.ID">Delete</a>
                         </td>
                     </tr>
                 }
